@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kích Hoạt Bảo Hành - Real Steel</title>
+    <style>
+        :root { --primary: #00d4ff; --bg: #020b1c; --card: #0a1529; --text: #e0e6ed; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; justify-content: center; }
+        .container { width: 100%; max-width: 480px; background: var(--bg); min-height: 100vh; padding-bottom: 40px; box-shadow: 0 0 15px rgba(0,212,255,0.1); }
+        
+        /* BANNER */
+        .banner { width: 100%; display: block; border-bottom: 2px solid var(--primary); }
+        
+        /* FORM */
+        .box { background: var(--card); margin: 20px; padding: 20px; border-radius: 12px; border: 1px solid rgba(0,212,255,0.2); }
+        h2, h3 { color: var(--primary); text-align: center; text-transform: uppercase; margin-top: 0; }
+        h2 { font-size: 1.3rem; } h3 { font-size: 1.1rem; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        
+        label { display: block; margin-bottom: 5px; color: #a0aab9; font-size: 0.9rem; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #2a3b55; background: #142035; color: #fff; box-sizing: border-box; }
+        input:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 5px rgba(0, 212, 255, 0.3); }
+        
+        .btn-submit { width: 100%; padding: 14px; background: linear-gradient(90deg, #0061c2, #00d4ff); border: none; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+        .btn-submit:hover { opacity: 0.9; transform: scale(1.02); }
+        .btn-submit:disabled { background: #555; cursor: not-allowed; transform: none; }
+
+        /* POLICY */
+        .step { margin-bottom: 15px; }
+        .step-t { color: #fff; font-weight: bold; display: flex; align-items: center; }
+        .step-t::before { content: "•"; color: var(--primary); font-size: 1.5rem; margin-right: 8px; }
+        .step-d { font-size: 0.9rem; color: #b0b8c4; padding-left: 20px; }
+        .highlight { background: rgba(0,212,255,0.1); border: 1px dashed var(--primary); padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 0.9rem; text-align: justify; }
+        
+        .footer { text-align: center; font-size: 0.8rem; color: #555; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.postimg.cc/Jh90mVQq/banner.jpg" alt="Banner Real Steel" class="banner">
+        
+        <div class="box">
+            <h2>Kích Hoạt Bảo Hành</h2>
+            <form id="warrantyForm">
+                <label>Số điện thoại (*)</label>
+                <input type="tel" name="phone" required placeholder="Nhập SĐT..." pattern="[0-9]{9,11}" title="Vui lòng nhập đúng số điện thoại">
+                
+                <label>Mã đơn hàng (*)</label>
+                <input type="text" name="orderId" required placeholder="VD: 581....">
+                
+                <label>Họ và tên</label>
+                <input type="text" name="fullname" placeholder="Nhập họ tên...">
+                
+                <label>Nền tảng mua hàng</label>
+                <select name="platform">
+                    <option value="TikTok">TikTok Shop</option>
+                    <option value="Shopee">Shopee</option>
+                    <option value="Facebook">Facebook / Khác</option>
+                </select>
+
+                <button type="submit" class="btn-submit" id="btnSubmit">Gửi Thông Tin</button>
+            </form>
+        </div>
+
+        <div class="box">
+            <h3>Chính Sách Hoàn Tiền 60 Ngày</h3>
+            <div style="font-style: italic; font-size: 0.9rem; margin-bottom: 15px; text-align: justify;">
+                Real Steel cam kết hoàn tiền nếu không hiệu quả. Vui lòng thực hiện đủ các bước:
+            </div>
+            <div class="step"><div class="step-t">1. ĐIỀN FORM ĐĂNG KÝ</div><div class="step-d">Cung cấp Mã đơn hàng, Họ tên, SĐT để kích hoạt hỗ trợ 1:1.</div></div>
+            <div class="step"><div class="step-t">2. GỬI ẢNH TRƯỚC KHI DÙNG</div><div class="step-d">Chụp ảnh tóc hiện tại gửi về hệ thống làm căn cứ so sánh.</div></div>
+            <div class="step"><div class="step-t">3. CẬP NHẬT ẢNH ĐỊNH KỲ</div><div class="step-d">Gửi ảnh sau 30 – 45 – 60 ngày sử dụng.</div></div>
+            <div class="highlight">
+                <strong>CAM KẾT:</strong> Nếu không hiệu quả sau 60 ngày và tuân thủ đúng hướng dẫn, Real Steel sẽ <strong>HOÀN 100% CHI PHÍ</strong>.
+            </div>
+        </div>
+        <div class="footer">&copy; 2024 REAL STEEL. All rights reserved.</div>
+    </div>
+
+    <script>
+        // --- CẤU HÌNH ĐÃ CẬP NHẬT ---
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzrzbwmI4YnZj2XTgY52y7Z8w2MiCEzNap-MPwNZBtrLOSd4kBthULWbOHoMZ6hhYWm/exec'; 
+        // -----------------------------
+
+        const form = document.getElementById('warrantyForm');
+        const btn = document.getElementById('btnSubmit');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            // Hiệu ứng nút bấm
+            const originalText = btn.innerText;
+            btn.disabled = true;
+            btn.innerText = "ĐANG GỬI...";
+
+            // Gửi dữ liệu bằng fetch
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    // Xử lý khi thành công
+                    alert("Đã gửi thông tin thành công!\nHệ thống đã ghi nhận bảo hành.");
+                    form.reset(); // Xóa trắng form
+                    btn.disabled = false;
+                    btn.innerText = originalText;
+                })
+                .catch(error => {
+                    // Xử lý khi lỗi
+                    console.error('Lỗi!', error.message);
+                    alert("Có lỗi xảy ra khi kết nối server. Vui lòng thử lại!");
+                    btn.disabled = false;
+                    btn.innerText = originalText;
+                });
+        });
+    </script>
+</body>
+</html>
